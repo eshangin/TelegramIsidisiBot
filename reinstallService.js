@@ -4,7 +4,7 @@ var Service = require('node-windows').Service;
 // Create a new service object
 var svc = new Service({
   name: 'IsidisiService',
-  description: 'The nodejs.org example web server.',
+  description: 'Web server for the Isidisi bot script',
   script: 'index.js',
   env: [{
     name: "BOT_TOKEN",
