@@ -8,19 +8,24 @@ bot.start((ctx) => {
 })
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
+    let results = [];
+    const kirpichLetters = ['с', 'к'];
     if (inlineQuery.query != '') {
-        let kirpichResult = inlineQuery.query.replace(/([ауоыиэяюёе])/g, "$1с$1");
-        console.log(kirpichResult);
-        const results = [{
-            type: 'article',
-            id: '1',
-            title: kirpichResult,
-            input_message_content: {
-                message_text: kirpichResult
-            }
-        }];
-        return answerInlineQuery(results/*, {cache_time: 0}*/)
+        results = kirpichLetters.map(letter => {
+            let kirpichResult = inlineQuery.query.replace(/([ауоыиэяюёе])/g, '$1' + letter + '$1');
+            console.log(kirpichResult);
+            return {
+                type: 'article',
+                id: letter,
+                title: kirpichResult,
+                input_message_content: {
+                    message_text: kirpichResult
+                }
+            };
+        })        
     }
+
+    return answerInlineQuery(results/*, {cache_time: 0}*/)
 });
 
 //bot.command('help', (ctx) => ctx.reply('Try send a sticker!'))
