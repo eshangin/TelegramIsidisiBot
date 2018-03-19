@@ -5,6 +5,12 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# Ignore service files (nodw-windows creates folder with scripts inside this folder)
+daemon
+
+# Ignore settings file
+.env.txt
+
 # Logs
 logs
 *.log

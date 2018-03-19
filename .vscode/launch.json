@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Isidisi Bot",
             "program": "${workspaceRoot}/index.js",
-            "envFile": "${workspaceRoot}/.vscode/.env.txt"
+            "envFile": "${workspaceRoot}/.env.txt"
         }
     ]
 }

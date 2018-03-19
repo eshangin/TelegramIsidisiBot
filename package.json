@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "telegraf": "^3.19.0",
+    "node-windows": "^0.1.14",
+    "dotenv": "^5.0.1"
+  }
+}
