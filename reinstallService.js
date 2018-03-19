@@ -3,9 +3,9 @@ var Service = require('node-windows').Service;
 
 // Create a new service object
 var svc = new Service({
-  name: 'IsidisiService',
-  description: 'Web server for the Isidisi bot script',
-  script: 'index.js',
+  name: process.env.WIN_SERVICE_NAME,
+  description: process.env.WIN_SERVICE_DESCR,
+  script: process.env.WIN_SERVICE_START_SCRIPT,
   env: [{
     name: "BOT_TOKEN",
     value: process.env.BOT_TOKEN
