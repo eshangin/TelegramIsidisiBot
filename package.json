@@ -6,5 +6,10 @@
     "telegraf": "^3.19.0",
     "node-windows": "^0.1.14",
     "dotenv": "^5.0.1"
-  }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-zip": "^3.0.2",
+    "minimist": "^1.2.0"
+  }  
 }
