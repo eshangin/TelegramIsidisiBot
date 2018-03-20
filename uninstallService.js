@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv').config({path: './.env.txt'});
+require('dotenv').config({path: path.join(__dirname, '.env.txt')});
 var Service = require('node-windows').Service;
 
 // Create a new service object
