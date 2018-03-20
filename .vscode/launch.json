@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Isidisi Bot",
-            "program": "${workspaceRoot}/index.js",
+            "program": "${workspaceRoot}/botLogic.js",
             "envFile": "${workspaceRoot}/.env.txt"
         }
     ]
