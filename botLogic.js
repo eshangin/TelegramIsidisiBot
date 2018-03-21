@@ -31,7 +31,7 @@ bot.on('inline_query', (ctx) => {
             event: 'InlineQuery', 
             userId: ctx.from.id.toString(),
             properties: {
-                message: inlineQuery.query
+                query: inlineQuery.query
             }
         });
 
@@ -51,6 +51,17 @@ bot.on('inline_query', (ctx) => {
     }
 
     return answerInlineQuery(results/*, {cache_time: 0}*/)
+});
+
+bot.on('chosen_inline_result', (ctx) => {
+    segmentClient.track({ 
+        event: 'ChosenInlineResult', 
+        userId: ctx.from.id.toString(),
+        properties: {
+            result_id: ctx.chosenInlineResult.result_id,
+            query: ctx.chosenInlineResult.query
+        }
+    });
 });
 
 //bot.command('help', (ctx) => ctx.reply('Try send a sticker!'))
