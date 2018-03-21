@@ -9,7 +9,7 @@ bot.start((ctx) => {
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
     let results = [];
-    const kirpichLetters = ['с', 'к', 'м'];
+    const kirpichLetters = ['с', 'к'];
     if (inlineQuery.query != '') {
         results = kirpichLetters.map(letter => {
             let kirpichResult = inlineQuery.query.replace(/([ауоыиэяюёе])/g, '$1' + letter + '$1');
