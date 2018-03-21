@@ -5,7 +5,8 @@
   "dependencies": {
     "telegraf": "^3.19.0",
     "node-windows": "^0.1.14",
-    "dotenv": "^5.0.1"
+    "dotenv": "^5.0.1",
+    "analytics-node": "3.2.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
