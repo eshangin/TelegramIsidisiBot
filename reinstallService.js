@@ -10,6 +10,12 @@ var svc = new Service({
   env: [{
     name: "BOT_TOKEN",
     value: process.env.BOT_TOKEN
+  }, {
+    name: 'SEGMENT_KEY',
+    value: process.env.SEGMENT_KEY
+  }, {
+    name: 'SEGMENT_FLUSH_AT',
+    value: process.env.SEGMENT_FLUSH_AT
   }]
 });
 
