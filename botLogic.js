@@ -10,11 +10,16 @@ bot.start((ctx) => {
         traits: ctx.from
     });
 
-    console.log('started:', ctx.from.id)
-    return ctx.reply([
-        'Привет! С этим инлайн-ботом ты сможешь быстро отправить кирпичный или соленый текст своему собеседнику. ',
-        'Для этого напиши @isidisibot в поле ввода и далее текст. В результате бот предложит ',
-        'кирпичный и соленый варианты для твоего текста на выбор. Дерзай :)'].join(''))
+    const Telegram = require('telegraf/telegram')
+    const telegram = new Telegram(process.env.BOT_TOKEN);
+
+    return telegram.getMe().then((info) => {
+        return ctx.reply([
+            'Привет! С этим инлайн-ботом ты сможешь быстро отправить кирпичный или соленый текст своему собеседнику. ',
+            'Для этого напиши @' + info.username + ' в поле ввода и далее текст. В результате бот предложит ',
+            'кирпичный и соленый варианты для твоего текста на выбор. Дерзай :)'].join(''))
+        }
+    );
 })
 
 bot.on('inline_query', (ctx) => {
@@ -29,7 +34,6 @@ bot.on('inline_query', (ctx) => {
                 message: inlineQuery.query
             }
         });
-        console.log(ctx.from);
 
         const kirpichLetters = ['с', 'к'];
         results = kirpichLetters.map(letter => {
