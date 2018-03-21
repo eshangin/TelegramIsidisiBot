@@ -4,7 +4,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start((ctx) => {
   console.log('started:', ctx.from.id)
-  return ctx.reply('Welcome!')
+  return ctx.reply('Привет! С этим инлайн-ботом ты сможешь быстро отправить кирпичный или соленый текст своему собеседнику. Для этого напиши @isidisibot в поле ввода и далее текст. В результате бот предложит кирпичный и соленый варианты для твоего текста. Дерзай :)')
 })
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
